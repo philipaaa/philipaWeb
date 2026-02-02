@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website and portfolio">
+    <title>Philip Papadatos - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home">Philip Papadatos</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span class="highlight">Philip</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Computer Science Student specializing in AI/ML | Full-Stack Developer | Building innovative web and mobile applications
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-placeholder">
+                    <!-- Add your profile image here -->
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="100" cy="100" r="80" fill="#e0e0e0"/>
+                        <circle cx="100" cy="80" r="30" fill="#999"/>
+                        <path d="M 50 180 Q 50 140 100 140 Q 150 140 150 180" fill="#999"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a Computer Science student at Carleton University, pursuing an Honours B.Sc with a specialization 
+                        in Artificial Intelligence and Machine Learning. With a strong foundation from my previous degree in 
+                        Biomedical Sciences at the University of Ottawa, I bring a unique interdisciplinary perspective to 
+                        software development.
+                    </p>
+                    <p>
+                        I'm passionate about building modern web and mobile applications that solve real-world problems. 
+                        From hackathon projects to personal initiatives, I enjoy working on projects that combine technical 
+                        skills with creative problem-solving. I'm fluent in English, French, Greek, and Spanish, which helps 
+                        me collaborate effectively in diverse teams.
+                    </p>
+                    <div class="skills">
+                        <h3>Skills & Technologies</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">React</span>
+                            <span class="skill-tag">React Native</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">SQL</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C#</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">R</span>
+                            <span class="skill-tag">Haskell</span>
+                            <span class="skill-tag">Swift</span>
+                            <span class="skill-tag">ServiceNow</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">LATEX</span>
+                        </div>
+                    </div>
+                    <div class="skills" style="margin-top: 2rem;">
+                        <h3>Languages</h3>
+                        <div class="skills-grid">
+                            <span class="skill-tag">English</span>
+                            <span class="skill-tag">French</span>
+                            <span class="skill-tag">Greek</span>
+                            <span class="skill-tag">Spanish</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">Portfolio</h2>
+            <p class="section-subtitle">A collection of projects I've worked on</p>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">Let's Train</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Let's Train</h3>
+                        <p>A mobile and web application built with React Native that helps Soccer Clubs and players train. The app uses a database to help users navigate through drills used by high-level teams and plan their own training sessions with ease. Currently in development as part of Database Management coursework.</p>
+                        <div class="portfolio-links">
+                            <span class="link" style="color: var(--text-secondary);">In Progress</span>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);"><strong>Tech:</strong> JavaScript, React Native, Expo, SQL</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">TalkToMe</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>TalkToMe</h3>
+                        <p>A mobile and web application built with React Native for self-improvement. Allows users to practice dialogue and conversation with AI-generated characters in different contexts and receive coaching. Built during a hackathon and powered by the OpenAI API.</p>
+                        <div class="portfolio-links">
+                            <span class="link" style="color: var(--text-secondary);">Hackathon Project</span>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);"><strong>Tech:</strong> JavaScript, React Native, Expo, OpenAI API</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">Pokemon Party</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Pokemon Party Web Application</h3>
+                        <p>A web application that uses PokeAPI to fulfill necessary tasks. Built using skills learned in Web Applications fundamentals course, demonstrating proficiency in modern web development practices.</p>
+                        <div class="portfolio-links">
+                            <span class="link" style="color: var(--text-secondary);">Course Project</span>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);"><strong>Tech:</strong> JavaScript, CSS, HTML, SQL, Node.js</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">Passion XI</div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Passion XI</h3>
+                        <p>Built a modern foundation for a new, up-and-coming local soccer team. Developed the website front-end with self-taught HTML, CSS, and JavaScript. Created marketing and branding strategy, designed and organized social media posts.</p>
+                        <div class="portfolio-links">
+                            <span class="link" style="color: var(--text-secondary);">Personal Project</span>
+                        </div>
+                        <p style="margin-top: 0.5rem; font-size: 0.875rem; color: var(--text-secondary);"><strong>Tech:</strong> HTML, CSS, JavaScript, Canva</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Courses & Education</h2>
+            <p class="section-subtitle">Learning never stops</p>
+            <div class="courses-timeline">
+                <div class="course-item">
+                    <div class="course-year">2023 - 2026</div>
+                    <div class="course-content">
+                        <h3>Honours B.Sc in Computer Science - AI/ML Stream</h3>
+                        <p class="course-institution">Carleton University, Ottawa, ON</p>
+                        <p>Expected Graduation: April 2026. Specializing in Artificial Intelligence and Machine Learning. Relevant coursework includes: Java (problem solving, abstraction, methods, inheritance, program efficiency, testing and debugging), Systems Programming in C (fundamental OS concepts, procedures, data types), Web Applications in JavaScript (scripting, virtual machines, performance and security), Data Structures (analysis and optimization), Software Engineering in C++, and Database Management Systems.</p>
+                    </div>
+                </div>
+                <div class="course-item">
+                    <div class="course-year">2018 - 2023</div>
+                    <div class="course-content">
+                        <h3>Honours B.Sc in Biomedical Sciences</h3>
+                        <p class="course-institution">University of Ottawa, Ottawa, ON</p>
+                        <p>Dean's Honors List 2018-2020. Relevant coursework includes: Python (algorithm design, structure decomposition, documentation, testing, debugging, recursion, data structures, introduction to objects), R (hands-on data analysis for biological questions using quantitative and computational methods), Computing, Programming, Bioinformatics Laboratory, Calculus, and Statistical Analysis.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">My professional journey</p>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-date">July 2023 - Present</div>
+                    <div class="experience-content">
+                        <h3>Student Intern</h3>
+                        <p class="experience-company">Conseil des Écoles catholiques du Centre-Est, Ottawa, ON</p>
+                        <ul class="experience-duties">
+                            <li>Performed web application quality assurance testing, reported various bugs and issues, ensuring the quality and functionality of the software</li>
+                            <li>Updated and maintained the MS SQL database using Visual Studio, meeting the changing business needs and requirements of the web application</li>
+                            <li>Fixed minor back-end bugs using C# and .NET, enhancing the performance and reliability of the web application</li>
+                        </ul>
+                        <p style="margin-top: 0.75rem; font-size: 0.875rem; color: var(--text-secondary);"><strong>Technical Skills:</strong> Jira Software, SQL, C#, .NET</p>
+                        <p style="font-size: 0.875rem; color: var(--text-secondary);"><strong>Soft Skills:</strong> Bug fixing, Application testing, Teamwork, Communication</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">I'm always open to discussing new opportunities</p>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:philippapadatos@cmail.carleton.ca">philippapadatos@cmail.carleton.ca</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong>
+                        <a href="https://www.linkedin.com/in/philip-papadatos-94b606246" target="_blank">www.linkedin.com/in/philip-papadatos-94b606246</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/philipaaa" target="_blank">github.com/philipaaa</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Philip Papadatos. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
