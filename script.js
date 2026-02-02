@@ -1,3 +1,56 @@
+// Dark mode / theme toggle
+const THEME_KEY = 'theme';
+
+function getSystemTheme() {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function getStoredTheme() {
+    return localStorage.getItem(THEME_KEY);
+}
+
+function applyTheme(theme) {
+    const root = document.documentElement;
+    if (theme === 'dark' || theme === 'light') {
+        root.setAttribute('data-theme', theme);
+    } else {
+        root.removeAttribute('data-theme');
+    }
+}
+
+function setTheme(theme) {
+    applyTheme(theme);
+    if (theme === 'dark' || theme === 'light') {
+        localStorage.setItem(THEME_KEY, theme);
+    } else {
+        localStorage.removeItem(THEME_KEY);
+    }
+}
+
+function initTheme() {
+    const stored = getStoredTheme();
+    if (stored === 'dark' || stored === 'light') {
+        applyTheme(stored);
+    } else {
+        applyTheme(getSystemTheme());
+    }
+}
+
+function toggleTheme() {
+    const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+    setTheme(current === 'dark' ? 'light' : 'dark');
+}
+
+// Apply theme as early as possible to avoid flash
+initTheme();
+
+document.querySelector('.theme-toggle')?.addEventListener('click', toggleTheme);
+
+// Optional: react to system theme changes when no manual preference is set
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+    if (!getStoredTheme()) initTheme();
+});
+
 // Mobile Navigation Toggle
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
@@ -48,8 +101,8 @@ window.addEventListener('scroll', () => {
 
 // Intersection Observer for fade-in animations
 const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
+    threshold: 0.08,
+    rootMargin: '0px 0px -80px 0px'
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -61,7 +114,20 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// Observe portfolio items
+// Section scroll-in: add .in-view when section enters viewport (fixes hero overlap + drives CSS fade-in)
+const sectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+        }
+    });
+}, { threshold: 0.12, rootMargin: '0px 0px -15% 0px' });
+
+document.querySelectorAll('section[id]').forEach(section => {
+    if (section.id !== 'home') sectionObserver.observe(section);
+});
+
+// Observe portfolio items (staggered within section)
 document.querySelectorAll('.portfolio-item').forEach(item => {
     item.style.opacity = '0';
     item.style.transform = 'translateY(20px)';
@@ -76,15 +142,6 @@ document.querySelectorAll('.course-item, .experience-item').forEach(item => {
     item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
     observer.observe(item);
 });
-
-// Observe about section
-const aboutContent = document.querySelector('.about-content');
-if (aboutContent) {
-    aboutContent.style.opacity = '0';
-    aboutContent.style.transform = 'translateY(20px)';
-    aboutContent.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
-    observer.observe(aboutContent);
-}
 
 // Active navigation link highlighting
 const sections = document.querySelectorAll('section[id]');
@@ -139,13 +196,5 @@ if ('loading' in HTMLImageElement.prototype) {
     document.body.appendChild(script);
 }
 
-// Add parallax effect to hero section (optional)
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const hero = document.querySelector('.hero');
-    if (hero && scrolled < window.innerHeight) {
-        hero.style.transform = `translateY(${scrolled * 0.5}px)`;
-    }
-});
 
 console.log('Portfolio website loaded successfully! 🚀');
