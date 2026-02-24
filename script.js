@@ -135,8 +135,8 @@ document.querySelectorAll('.portfolio-item').forEach(item => {
     observer.observe(item);
 });
 
-// Observe course and experience items
-document.querySelectorAll('.course-item, .experience-item').forEach(item => {
+// Observe course, experience, and publication items
+document.querySelectorAll('.course-item, .experience-item, .publication-item').forEach(item => {
     item.style.opacity = '0';
     item.style.transform = 'translateX(-20px)';
     item.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';

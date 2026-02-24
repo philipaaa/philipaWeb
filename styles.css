@@ -268,6 +268,10 @@ body {
     z-index: 1;
 }
 
+.hero .container > * {
+    min-width: 0; /* Prevent overflow in Firefox when viewport is narrow */
+}
+
 .hero-content {
     animation: fadeInUp 0.8s ease-out;
 }
@@ -408,6 +412,7 @@ section:not(.hero) .about-content,
 section:not(.hero) .portfolio-grid,
 section:not(.hero) .courses-timeline,
 section:not(.hero) .experience-timeline,
+section:not(.hero) .publications-list,
 section:not(.hero) .contact-content {
     opacity: 0;
     transform: translateY(24px);
@@ -430,6 +435,7 @@ section:not(.hero).in-view .about-content,
 section:not(.hero).in-view .portfolio-grid,
 section:not(.hero).in-view .courses-timeline,
 section:not(.hero).in-view .experience-timeline,
+section:not(.hero).in-view .publications-list,
 section:not(.hero).in-view .contact-content {
     opacity: 1;
     transform: translateY(0);
@@ -520,6 +526,7 @@ section:not(.hero).in-view .contact-content {
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    min-width: 0; /* Let grid item shrink in Firefox (default min-width: auto can cause overflow) */
 }
 
 .portfolio-link {
@@ -546,6 +553,7 @@ section:not(.hero).in-view .contact-content {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block; /* Remove inline gap; consistent sizing in Firefox */
 }
 
 .image-placeholder {
@@ -555,6 +563,7 @@ section:not(.hero).in-view .contact-content {
 
 .portfolio-content {
     padding: 1.5rem;
+    min-width: 0; /* Allow content to shrink inside grid item (Firefox) */
 }
 
 .portfolio-content h3 {
@@ -732,6 +741,72 @@ section:not(.hero).in-view .contact-content {
     font-weight: bold;
 }
 
+/* Publications Section */
+.publications {
+    background-color: var(--bg-primary);
+    border-top: 1px solid var(--border-color);
+}
+
+.publications-list {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 3rem;
+}
+
+.publication-item {
+    display: block;
+    background: var(--card-bg);
+    border-radius: 1rem;
+    padding: 1.5rem 1.75rem;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    text-decoration: none;
+    color: inherit;
+}
+
+.publication-item:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-color);
+}
+
+.publication-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+.publication-authors {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.35rem;
+}
+
+.publication-journal {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.publication-abstract {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.publication-link {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.publication-item:hover .publication-link {
+    text-decoration: underline;
+}
+
 /* Contact Section */
 .contact {
     background-color: var(--bg-primary);
@@ -754,6 +829,7 @@ section:not(.hero).in-view .contact-content {
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 0; /* Allow cards to shrink in grid (Firefox) */
     text-align: center;
     padding: 2rem 1.5rem;
     background: var(--card-bg);
