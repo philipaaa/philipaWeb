@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Q-Learning IQ Tester - Reinforcement learning agent for the Original IQ peg puzzle">
+    <title>Q-Learning IQ Tester | Philip Papadatos</title>
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        var d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t === 'dark' || t === 'light' ? t : d);
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">Philip Papadatos</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#courses">Courses</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li>
+                    <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                        <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    </button>
+                </li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container project-page">
+        <a href="../index.html#portfolio" class="project-back">← Back to Portfolio</a>
+
+        <header class="project-header">
+            <h1 class="project-title">Q-Learning IQ Tester</h1>
+            <div class="project-meta">
+                <span class="project-status status-complete">Complete</span>
+                <span class="project-date">Fall 2025</span>
+                <a href="https://github.com/2025F-COMP3106/project-35" class="project-github" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    View on GitHub
+                </a>
+            </div>
+            <p class="project-summary">I came across the Original IQ Tester—a triangular puzzle with 14 pins and one empty hole. I couldn’t consistently finish with a single peg left, so I asked: <strong>can a reinforcement learning agent learn to solve it better than I can?</strong> This project is my answer.</p>
+            <div class="project-skills">
+                <h3>Skills & technologies</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">NumPy</span>
+                    <span class="skill-tag">Q-Learning</span>
+                    <span class="skill-tag">Tkinter</span>
+                    <span class="skill-tag">Reward Shaping</span>
+                    <span class="skill-tag">Algorithm Design</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="project-section">
+            <h3>The puzzle</h3>
+            <figure class="project-figure">
+                <img src="iq-tester-board.png" alt="The Original I.Q. Tester Deluxe Edition game board — triangular peg layout with 14 pegs and one empty hole." width="600">
+                <figcaption>The Original I.Q. Tester — 14 pegs, one empty hole. Jump pegs over each other; goal is to leave only one.</figcaption>
+            </figure>
+            <p>The Original IQ Tester is a 5-base pyramid with 14 pins and 1 empty hole. You jump one peg over another into the empty space (the jumped peg is removed) and repeat until no legal moves remain. The goal is to finish with exactly one peg. The mechanics are simple; the puzzle is surprisingly hard. It’s deterministic, sequential, and reward-sparse—a good testbed for reinforcement learning.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>What I built</h3>
+            <ul>
+                <li><strong>Q_Learning_IQ_tester.py</strong> — Environment (state as NumPy array, 38 legal moves), reward function with shaping, Q-learning with epsilon-greedy exploration, temporal-difference updates, training over 10k episodes per start hole, and evaluation over 100 greedy rollouts.</li>
+                <li><strong>peg_gui.py</strong> — Tkinter GUI that loads saved Q-tables and lets you step through the greedy solution or auto-play, and reset the board.</li>
+                <li>Reward shaping: small positive reward per jump (+0.25), +20 for ending with one peg, penalty for extra pegs left, so the agent gets a useful learning signal even before solving.</li>
+                <li>Symmetry: the board is symmetric under rotation/reflection. I only train on start holes {0, 1, 3, 4} (all symmetry classes), so training is 4× faster and the Q-table stays smaller.</li>
+            </ul>
+        </section>
+
+        <section class="project-section">
+            <h3>Results</h3>
+            <p>Greedy rollouts show the agent learns real strategy: it tends to remove outer pins early, keeps symmetric shapes when it can, and avoids leaving isolated pins. Action sequences get longer and more structured as training goes on. The GUI makes that visible. Quantitatively, the agent sometimes reaches the optimal one-peg solution; more often it ends with two to four pegs—still much better than random. Success rate depends on the starting hole; after ~10k episodes per start, gains level off. In most runs the agent finds a “winning” policy from every hole; if not, a couple of runs usually does it.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Limitations & future work</h3>
+            <p>Reward is still sparse (most signal is at the end), and tabular Q-learning doesn’t generalize to unseen states, which hurts in a large state space. Some good move sequences are rare, so exploration is tough. I’d like to try a Deep Q-Network for generalization, more reward shaping or curriculum learning, symmetry-aware state compression, and better ways to propagate terminal reward (e.g. Monte Carlo returns). Even with these limits, the project shows that Q-learning can learn non-trivial policies for the IQ Tester, and the visualization was really helpful for understanding what the agent was doing.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Run it yourself</h3>
+            <p>From the repo:</p>
+            <pre class="project-code">pip3 install -r requirements.txt
+python3 Q_Learning_IQ_tester.py
+python3 peg_gui.py</pre>
+            <p>The CLI will ask for a start hole in {0, 1, 3, 4}. The GUI has Step (next action), Auto-play (greedy solution), and Reset.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Philip Papadatos. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
