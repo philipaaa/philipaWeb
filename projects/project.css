@@ -114,10 +114,28 @@
     border-bottom: 2px solid var(--primary-color);
 }
 
+.project-section h4 {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+}
+
 .project-section p,
 .project-section ul {
     color: var(--text-secondary);
     line-height: 1.8;
+}
+
+.project-section code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+    padding: 0.2em 0.4em;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    color: var(--text-primary);
 }
 
 .project-section ul {
