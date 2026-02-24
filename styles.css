@@ -542,6 +542,12 @@ section:not(.hero).in-view .contact-content {
     justify-content: center;
 }
 
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .image-placeholder {
     color: var(--btn-on-primary);
     font-weight: 600;

@@ -4,6 +4,16 @@
     padding-bottom: 4rem;
 }
 
+/* Override main site's section padding so .project-section margin controls spacing */
+.project-page section.project-section {
+    padding-top: 0.5rem;
+    padding-bottom: 0;
+}
+
+.project-section {
+    margin-bottom: 1.5rem;
+}
+
 .project-back {
     display: inline-flex;
     align-items: center;
@@ -96,10 +106,6 @@
     gap: 0.5rem;
 }
 
-.project-section {
-    margin-bottom: 1.25rem;
-}
-
 .project-section h3 {
     font-size: 1.35rem;
     color: var(--text-primary);
@@ -160,6 +166,84 @@
     border-radius: 0.5rem;
     color: var(--text-primary);
     overflow-x: auto;
+}
+
+/* Instagram / external link card (e.g. Passion XI) */
+.project-instagram-section {
+    margin-top: 1.5rem;
+}
+
+.project-instagram-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 0.75rem;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+.project-instagram-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-md);
+}
+
+.project-instagram-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    color: var(--primary-color);
+}
+
+.project-instagram-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.project-instagram-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.project-instagram-text strong {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+}
+
+.project-instagram-text span {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.project-instagram-arrow {
+    flex-shrink: 0;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    margin-left: 0.25rem;
+}
+
+.project-instagram-embed-wrap {
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+}
+
+.project-instagram-embed {
+    display: block;
+    width: 100%;
+    min-height: 780px;
+    border: 0;
 }
 
 @media (max-width: 768px) {

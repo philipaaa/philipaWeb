@@ -1,19 +1,19 @@
-# Personal Portfolio Website
+# Personal Website
 
-A clean, modern, and responsive personal website showcasing your portfolio, courses, and work experience.
+Welcome to my personal website introducing you to my world!
 
 ## Features
 
-- 🎨 **Modern Design** - Clean and professional UI with smooth animations
-- 📱 **Fully Responsive** - Works perfectly on desktop, tablet, and mobile devices
-- ⚡ **Fast & Lightweight** - Pure HTML, CSS, and JavaScript (no frameworks)
-- 🎯 **Easy to Customize** - Well-organized code with clear comments
-- ✨ **Smooth Animations** - Intersection Observer for scroll-triggered animations
-- 🧭 **Smooth Navigation** - Fixed navbar with active section highlighting
+- **Modern Design** - Clean and professional UI with smooth animations
+- **Fully Responsive** - Works perfectly on desktop, tablet, and mobile devices
+- **Fast & Lightweight** - Pure HTML, CSS, and JavaScript (no frameworks)
+- **Easy to Customize** - Well-organized code with clear comments
+- **Smooth Animations** - Intersection Observer for scroll-triggered animations
+- **Smooth Navigation** - Fixed navbar with active section highlighting
 
 ## Sections
 
-1. **Hero/Home** - Introduction with your name and tagline
+1. **Hero/Home** - Introduction with my name and tagline
 2. **About** - Personal information and skills
 3. **Portfolio** - Showcase of your projects
 4. **Courses** - Educational background and courses taken
