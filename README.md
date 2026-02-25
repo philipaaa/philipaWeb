@@ -1,224 +1,78 @@
-# Personal Website
+# Philip Papadatos – Personal Website
 
-Welcome to my personal website introducing you to my world!
+This repo contains the source for my personal site and portfolio.
+
+- **Live site**: `https://philipaaa.live`
+- **GitHub Pages repo** (deployment): `https://github.com/philipaaa/philipaaa.github.io`
+
+The site is built with **HTML, CSS, and vanilla JavaScript** and showcases my background in **Computer Science (AI/ML)** and **Biomedical Sciences**, along with selected projects and a peer‑reviewed publication.
 
 ## Features
 
-- **Modern Design** - Clean and professional UI with smooth animations
-- **Fully Responsive** - Works perfectly on desktop, tablet, and mobile devices
-- **Fast & Lightweight** - Pure HTML, CSS, and JavaScript (no frameworks)
-- **Easy to Customize** - Well-organized code with clear comments
-- **Smooth Animations** - Intersection Observer for scroll-triggered animations
-- **Smooth Navigation** - Fixed navbar with active section highlighting
+- **Modern, responsive layout** – Works on desktop, tablet, and mobile
+- **Dark / light mode** – Theme toggle with preference saved in `localStorage`
+- **Smooth navigation** – Fixed navbar with active‑section highlighting and smooth scrolling
+- **Scroll‑in animations** – Sections and timeline items animate into view via `IntersectionObserver`
+- **Project detail pages** – Dedicated write‑ups for key projects under `projects/`
+- **Publications section** – Highlights my prostate MRI publication with a link to PubMed
 
-## Sections
+## Site Structure
 
-1. **Hero/Home** - Introduction with my name and tagline
-2. **About** - Personal information and skills
-3. **Portfolio** - Showcase of your projects
-4. **Courses** - Educational background and courses taken
-5. **Experience** - Work experience timeline
-6. **Contact** - Ways to get in touch
+Main sections on `index.html`:
 
-## Getting Started
+1. **Hero** – Intro, tagline, and primary CTAs
+2. **About** – Bio, skills & technologies, and languages
+3. **Portfolio** – Cards linking to detailed project pages:
+   - Q‑Learning IQ Tester  
+   - Let’s Train  
+   - TalkToMe  
+   - Pokémon Party Web Application  
+   - Passion XI
+4. **Courses & Education** – Computer Science (AI/ML) at Carleton and Biomedical Sciences at uOttawa
+5. **Work Experience** – Student Intern role at Conseil des Écoles catholiques du Centre‑Est
+6. **Publications** –  
+   *Comparison of 5 Rectal Preparation Strategies for Prostate MRI and Impact on Image Quality*  
+   with a card linking to PubMed (PMID: 34404240)
+7. **Get In Touch** – Email, LinkedIn, GitHub, and downloadable CV
 
-### Prerequisites
+Each portfolio card links to a corresponding page in `projects/` (e.g. `projects/q-learning-iq-tester.html`, `projects/passion-xi.html`) styled with `projects/project.css`.
 
-- A modern web browser
-- A text editor (VS Code, Sublime Text, etc.)
-- Optional: A local web server (for testing)
+## Tech Stack
 
-### Installation
+- **HTML5** – Semantic sections and accessible structure
+- **CSS3** – Custom design system with CSS variables, grid/flexbox layout, and responsive breakpoints
+- **JavaScript** – Theme toggle, scroll animations, mobile navigation, and active‑link highlighting
 
-1. Clone or download this repository
-2. Open `index.html` in your web browser
-3. Start customizing the content!
+No frontend framework is used; everything is hand‑rolled for performance and control.
 
-### Running Locally
+## Running Locally
 
-You can use any local server. Here are a few options:
+1. Clone this repository.
+2. Open `index.html` directly in your browser **or** start a simple local server:
 
-**Using Python:**
+Using Python:
+
 ```bash
 python -m http.server 8000
 ```
 
-**Using Node.js (http-server):**
-```bash
-npx http-server
-```
+Then visit `http://localhost:8000`.
 
-**Using VS Code Live Server:**
-- Install the "Live Server" extension
-- Right-click on `index.html` and select "Open with Live Server"
+## Project Layout
 
-Then open `http://localhost:8000` (or the port shown) in your browser.
-
-## Customization Guide
-
-### 1. Update Personal Information
-
-**In `index.html`:**
-
-- **Name**: Replace "Your Name" throughout the file
-- **Hero Section**: Update the title, subtitle, and tagline
-- **About Section**: Write your personal bio and add your skills
-- **Contact Section**: Update email, LinkedIn, and GitHub links
-
-### 2. Add Your Profile Picture
-
-Replace the SVG placeholder in the hero section:
-
-```html
-<div class="hero-image">
-    <img src="path/to/your/profile.jpg" alt="Your Name" class="profile-image">
-</div>
-```
-
-Then add CSS for `.profile-image`:
-```css
-.profile-image {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    object-fit: cover;
-    box-shadow: var(--shadow-xl);
-}
-```
-
-### 3. Add Portfolio Projects
-
-Edit the portfolio items in `index.html`:
-
-```html
-<div class="portfolio-item">
-    <div class="portfolio-image">
-        <img src="path/to/project-image.jpg" alt="Project Name">
-    </div>
-    <div class="portfolio-content">
-        <h3>Your Project Name</h3>
-        <p>Project description...</p>
-        <div class="portfolio-links">
-            <a href="https://your-demo.com" class="link">Live Demo</a>
-            <a href="https://github.com/yourusername/project" class="link">GitHub</a>
-        </div>
-    </div>
-</div>
-```
-
-### 4. Update Courses
-
-Modify the course items:
-
-```html
-<div class="course-item">
-    <div class="course-year">2024</div>
-    <div class="course-content">
-        <h3>Course Name</h3>
-        <p class="course-institution">Institution Name</p>
-        <p>Course description...</p>
-    </div>
-</div>
-```
-
-### 5. Update Work Experience
-
-Edit the experience items:
-
-```html
-<div class="experience-item">
-    <div class="experience-date">2024 - Present</div>
-    <div class="experience-content">
-        <h3>Your Job Title</h3>
-        <p class="experience-company">Company Name</p>
-        <ul class="experience-duties">
-            <li>Responsibility 1</li>
-            <li>Responsibility 2</li>
-        </ul>
-    </div>
-</div>
-```
-
-### 6. Customize Colors
-
-Edit the CSS variables in `styles.css`:
-
-```css
-:root {
-    --primary-color: #6366f1;      /* Main brand color */
-    --secondary-color: #8b5cf6;   /* Secondary accent color */
-    --text-primary: #1f2937;       /* Main text color */
-    --text-secondary: #6b7280;     /* Secondary text color */
-    /* ... */
-}
-```
-
-### 7. Add More Skills
-
-In the About section, add more skill tags:
-
-```html
-<span class="skill-tag">Your Skill</span>
-```
-
-## File Structure
-
-```
+```text
 philipaWeb/
-│
-├── index.html          # Main HTML file
-├── styles.css          # All styles and animations
-├── script.js           # JavaScript for interactivity
+├── index.html          # Main single-page site
+├── styles.css          # Global styling and layout
+├── script.js           # Theme, navigation, and animations
+├── projects/           # Individual project detail pages + project.css
+├── assets/             # Images and other static assets
+├── resume.pdf          # Downloadable CV linked from the site
+├── extract_pdf.py      # Helper script used during resume/content generation
 └── README.md           # This file
 ```
 
-## Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-
-## Performance Tips
-
-1. **Optimize Images**: Use compressed images (WebP format recommended)
-2. **Lazy Loading**: Images will lazy load automatically if you add the `loading="lazy"` attribute
-3. **Minify**: For production, minify CSS and JavaScript files
-4. **CDN**: Consider hosting images on a CDN for faster loading
-
 ## Deployment
 
-### GitHub Pages
+The site is deployed via **GitHub Pages** from `philipaaa/philipaaa.github.io` and served through the custom domain `philipaaa.live`. When I update this repo, I mirror relevant changes into the GitHub Pages repo and redeploy.
 
-1. Push your code to a GitHub repository
-2. Go to Settings → Pages
-3. Select the main branch
-4. Your site will be live at `https://yourusername.github.io/repository-name`
-
-### Netlify
-
-1. Drag and drop your project folder to [Netlify](https://www.netlify.com)
-2. Your site will be live instantly!
-
-### Vercel
-
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in your project directory
-3. Follow the prompts
-
-## License
-
-Feel free to use this template for your personal website!
-
-## Credits
-
-- Font: [Inter](https://fonts.google.com/specimen/Inter) by Google Fonts
-- Design inspiration: Modern web design trends
-
-## Support
-
-If you have any questions or need help customizing your website, feel free to reach out!
-
----
-
-Made with ❤️ for showcasing your work

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SESA Student Housing Hackathon - Unified app solving student housing challenges with listings, surveys, matching, and landlord profiles">
+    <title>SESA Student Housing Hackathon | Philip Papadatos</title>
+    <script>
+      (function() {
+        var t = localStorage.getItem('theme');
+        var d = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', t === 'dark' || t === 'light' ? t : d);
+      })();
+    </script>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="../index.html">Philip Papadatos</a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#portfolio">Portfolio</a></li>
+                <li><a href="../index.html#courses">Courses</a></li>
+                <li><a href="../index.html#experience">Experience</a></li>
+                <li><a href="../index.html#publications">Publications</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+                <li>
+                    <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <span class="theme-icon theme-icon-sun" aria-hidden="true">☀️</span>
+                        <span class="theme-icon theme-icon-moon" aria-hidden="true">🌙</span>
+                    </button>
+                </li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <main class="container project-page">
+        <a href="../index.html#portfolio" class="project-back">← Back to Portfolio</a>
+
+        <header class="project-header">
+            <h1 class="project-title">SESA Student Housing Hackathon</h1>
+            <div class="project-meta">
+                <span class="project-status status-complete">Complete</span>
+                <a href="https://github.com/philipaaa/sesa_studenthousing_hackathon_g735" class="project-github" target="_blank" rel="noopener noreferrer">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    Repository
+                </a>
+            </div>
+            <p class="project-summary">A unified React/TypeScript application built during the SESA hackathon to address student housing challenges. The app integrates four key screens—property listings with landlord verification, roommate compatibility surveys, housing connection and matching, and landlord profile management—into a single cohesive experience.</p>
+            <div class="project-skills">
+                <h3>Skills & technologies</h3>
+                <div class="skills-grid">
+                    <span class="skill-tag">TypeScript</span>
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">CSS</span>
+                    <span class="skill-tag">Vite</span>
+                    <span class="skill-tag">React Router</span>
+                    <span class="skill-tag">face-api.js</span>
+                    <span class="skill-tag">Tesseract.js</span>
+                    <span class="skill-tag">Security</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="project-section">
+            <h3>Inspiration</h3>
+            <p>Student housing is a major challenge for university students—finding affordable, safe accommodations and compatible roommates can be stressful and time-consuming. The SESA hackathon provided an opportunity to tackle this real-world problem by building a comprehensive solution that addresses multiple pain points in one unified platform.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Approach</h3>
+            <p>The project started as four separate prototypes, each addressing a different aspect of student housing:</p>
+            <ul>
+                <li><strong>Listings</strong> – Redesigned uOttawa Housing Billboard with property listings and landlord verification</li>
+                <li><strong>Survey</strong> – Roommate compatibility survey with compatibility buffer matching</li>
+                <li><strong>Housing</strong> – Housing connection app for roommate matching</li>
+                <li><strong>Landlord</strong> – Student housing landlord profile management</li>
+            </ul>
+            <p>I unified all four screens into a single React/TypeScript application with a shared navigation system. The app uses React Router for navigation between screens, ensuring a seamless user experience. Each screen maintains its own functionality while benefiting from a consistent design system and shared components.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Technical Details</h3>
+            <p>The unified app is built with:</p>
+            <ul>
+                <li><strong>TypeScript</strong> for type safety and better developer experience</li>
+                <li><strong>React</strong> with functional components and hooks</li>
+                <li><strong>Vite</strong> for fast development and optimized builds</li>
+                <li><strong>React Router</strong> for client-side routing between the four main screens</li>
+                <li><strong>CSS</strong> for styling with a consistent design system</li>
+            </ul>
+            <p>The architecture allows each screen to be developed independently while sharing common navigation, layout, and utility components. The single entry point simplifies deployment and user experience compared to running four separate applications.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Security Implementation</h3>
+            <p>We implemented several security features to protect users and ensure data integrity:</p>
+            
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem;">Identity Verification System</h4>
+            <p>For landlord verification, we built a multi-factor identity verification system using <strong>face-api.js</strong> and <strong>Tesseract.js</strong>:</p>
+            <ul>
+                <li><strong>Document Verification</strong> – Validates that uploaded ID documents contain exactly one detectable face, ensuring the document appears to be a legitimate ID photo</li>
+                <li><strong>Selfie Verification with Code</strong> – Uses OCR (Tesseract.js) to extract a 4-digit verification code displayed on paper in the selfie, then compares the selfie face to the ID photo using facial recognition</li>
+                <li><strong>Face Matching</strong> – Employs face-api.js with a configurable threshold to verify that the person in the selfie matches the person on the ID document</li>
+            </ul>
+            
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem;">Authentication & Authorization</h4>
+            <ul>
+                <li><strong>Context-based Authentication</strong> – Implemented a React Context API authentication system that separates user types (students vs. landlords) and manages session state securely</li>
+                <li><strong>Input Validation</strong> – Prevents duplicate registrations by validating unique email addresses and student IDs before account creation</li>
+                <li><strong>Credential Validation</strong> – Secure credential checking with proper error handling that doesn't reveal whether an email exists in the system</li>
+                <li><strong>Secure ID Generation</strong> – Uses <code>crypto.randomUUID()</code> for generating secure, unique identifiers</li>
+            </ul>
+            
+            <h4 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: var(--text-primary); font-size: 1.1rem;">Type Safety & Code Quality</h4>
+            <ul>
+                <li><strong>TypeScript</strong> – Full type safety throughout the application prevents common security vulnerabilities like type confusion and ensures data integrity</li>
+                <li><strong>Structured Error Handling</strong> – Comprehensive error handling in verification flows prevents information leakage and provides clear user feedback</li>
+            </ul>
+            
+            <p style="margin-top: 1rem;">These security measures ensure that only verified landlords can list properties, protecting students from fraudulent listings while maintaining a smooth user experience.</p>
+        </section>
+
+        <section class="project-section">
+            <h3>Takeaways</h3>
+            <p>This hackathon project taught me valuable lessons in rapid prototyping, component architecture, and integrating multiple features into a cohesive application. Working with TypeScript improved code quality and caught errors early, while React Router made navigation intuitive. Implementing the identity verification system gave me hands-on experience with computer vision APIs, OCR, and multi-factor authentication flows. The challenge of unifying four separate prototypes into one app reinforced the importance of planning for scalability and reusability from the start, while the security features highlighted the critical importance of protecting user data in real-world applications.</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Philip Papadatos. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+</html>
