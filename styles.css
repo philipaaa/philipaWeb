@@ -527,6 +527,29 @@ section:not(.hero).in-view .contact-content {
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     min-width: 0; /* Let grid item shrink in Firefox (default min-width: auto can cause overflow) */
+    position: relative;
+}
+
+.portfolio-badge {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.35rem 0.65rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1;
+    box-shadow: var(--shadow-md);
+    pointer-events: none;
+}
+
+.portfolio-badge--winner {
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #fff;
 }
 
 .portfolio-link {
